@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Bilal Yawar &mdash; Data Science student interested in programming, algorithms and technology." name="description"/>
+  <title>
+   Bilal Yawar &mdash; Portfolio
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+:root {
+    --cream:#f4f0e5;
+    --paper:#fffdf7;
+    --green:#244b38;
+    --deep:#183729;
+    --soft:#dce6d8;
+    --ink:#24352b;
+    --muted:#68756a;
+    --line:#b9c5b2;
+    --mono:"DM Mono",monospace;
+    --sans:Manrope,Arial,sans-serif;
+    --serif:Georgia,serif
+}
+* {
+    box-sizing:border-box
+}
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:20px
+}
+body {
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.7
+}
+a {
+    color:inherit;
+    text-decoration:none
+}
+a:focus-visible {
+    outline:3px solid #8ba88d;
+    outline-offset:4px
+}
+.frame {
+    width:min(1180px,calc(100% - 42px));
+    margin:21px auto;
+    border:1px solid var(--green);
+    padding:0 clamp(22px,6vw,76px)
+}
+.topline {
+    display:flex;
+    justify-content:space-between;
+    padding:17px 0;
+    border-bottom:1px solid var(--line);
+    font:10px var(--mono);
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--green)
+}
+.dot {
+    display:inline-block;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#638c68;
+    margin-right:8px
+}
+.hero {
+    min-height:660px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:85px 0 95px;
+    position:relative
+}
+.kicker,.label,.meta {
+    font:10px var(--mono);
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--green)
+}
+.kicker {
+    margin-bottom:26px
+}
+h1 {
+    font:700 clamp(62px,11vw,132px)/.98 var(--serif);
+    letter-spacing:-5px;
+    color:var(--deep);
+    margin:0
+}
+.rule {
+    width:75px;
+    height:2px;
+    background:var(--green);
+    margin:34px auto 24px
+}
+.hello {
+    font-size:clamp(20px,3vw,28px);
+    font-weight:700;
+    color:var(--green);
+    margin:0 0 12px
+}
+.intro {
+    max-width:650px;
+    color:var(--muted);
+    font-size:15px;
+    margin:0
+}
+.intro strong {
+    color:var(--deep)
+}
+.nav-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:11px;
+    margin-top:40px
+}
+.nav-buttons a {
+    min-width:132px;
+    padding:12px 19px;
+    border:1px solid var(--green);
+    color:var(--green);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    transition:.2s
+}
+.nav-buttons a:hover {
+    background:var(--green);
+    color:var(--cream);
+    transform:translateY(-3px)
+}
+.scroll {
+    position:absolute;
+    bottom:25px;
+    font:9px var(--mono);
+    letter-spacing:1.5px;
+    color:#849083
+}
+section {
+    border-top:1px solid var(--line);
+    padding:82px 0;
+    scroll-margin-top:10px
+}
+.label {
+    display:flex;
+    align-items:center;
+    gap:13px
+}
+.label:after {
+    content:"";
+    height:1px;
+    background:var(--line);
+    flex:1
+}
+h2 {
+    font:700 clamp(36px,6vw,60px)/1.08 var(--serif);
+    letter-spacing:-1.8px;
+    color:var(--deep);
+    margin:27px 0 28px
+}
+.muted {
+    max-width:720px;
+    color:var(--muted);
+    font-size:14px
+}
+.about {
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:60px;
+    align-items:start
+}
+.aside {
+    background:var(--green);
+    color:var(--cream);
+    padding:27px;
+    min-height:225px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between
+}
+.aside b {
+    font:700 76px/.9 var(--serif);
+    color:#dce6d8
+}
+.aside span {
+    font:9px var(--mono);
+    letter-spacing:1px;
+    text-transform:uppercase
+}
+.about-copy p {
+    font-size:14px;
+    color:var(--muted);
+    margin:0 0 16px
+}
+.about-copy .lead {
+    font-size:19px;
+    font-weight:600;
+    line-height:1.7;
+    color:var(--deep)
+}
+.facts {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+    margin-top:26px
+}
+.fact small {
+    display:block;
+    color:#829080;
+    font:9px var(--mono);
+    margin-bottom:7px
+}
+.fact strong {
+    font-size:11px;
+    color:var(--deep)
+}
+.project {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border:1px solid var(--green);
+    background:var(--paper);
+    margin-top:34px
+}
+.art {
+    min-height:340px;
+    background:var(--deep);
+    padding:23px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between
+}
+.art small {
+    font:9px var(--mono);
+    letter-spacing:1.2px;
+    color:#cbd8c7
+}
+.art svg {
+    width:100%;
+    margin:auto
+}
+.details {
+    padding:36px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center
+}
+.status {
+    align-self:start;
+    border:1px solid #9caf9a;
+    padding:5px 9px;
+    color:var(--green);
+    font:9px var(--mono)
+}
+h3 {
+    font:700 26px/1.2 var(--serif);
+    color:var(--deep);
+    margin:18px 0 12px
+}
+.details p {
+    font-size:13px;
+    color:var(--muted)
+}
+.contrib {
+    border-left:2px solid #6d936f;
+    padding-left:13px;
+    margin:10px 0 18px
+}
+.contrib small {
+    display:block;
+    font:9px var(--mono);
+    color:#849083
+}
+.contrib strong {
+    font-size:12px;
+    color:var(--deep)
+}
+.tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px
+}
+.tags span {
+    border:1px solid #c2cdbd;
+    padding:5px 9px;
+    color:var(--green);
+    font:9px var(--mono)
+}
+.meta {
+    font-size:9px;
+    color:#849083;
+    margin-top:17px
+}
+.cards {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:32px
+}
+.card {
+    border:1px solid var(--line);
+    background:rgba(255,253,247,.6);
+    padding:23px;
+    min-height:180px;
+    transition:.2s
+}
+.card:hover {
+    transform:translateY(-4px);
+    border-color:var(--green);
+    background:var(--paper)
+}
+.num {
+    font:10px var(--mono);
+    color:#829080
+}
+.card h3 {
+    margin:24px 0 8px;
+    font-size:22px
+}
+.card p {
+    font-size:12px;
+    color:var(--muted);
+    margin:0
+}
+.year {
+    display:block;
+    font:9px var(--mono);
+    color:var(--green);
+    margin-top:14px
+}
+.skillgrid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:32px
+}
+.skill {
+    background:var(--soft);
+    border-top:2px solid var(--green);
+    padding:22px
+}
+.skill h3 {
+    font-size:20px;
+    margin:0 0 17px
+}
+.level {
+    font:9px var(--mono);
+    color:#788779;
+    margin-top:15px;
+    text-transform:uppercase;
+    letter-spacing:1px
+}
+.contactbox {
+    background:var(--green);
+    color:var(--cream);
+    padding:clamp(28px,6vw,58px);
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:28px;
+    align-items:end
+}
+.contactbox h2 {
+    color:var(--cream);
+    margin:0 0 14px
+}
+.contactbox p {
+    color:#d5dfd1;
+    font-size:13px;
+    max-width:520px
+}
+.contactbox a {
+    display:inline-block;
+    border:1px solid var(--cream);
+    padding:12px 18px;
+    color:var(--cream);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    transition:.2s
+}
+.contactbox a:hover {
+    background:var(--cream);
+    color:var(--green)
+}
+.socials {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px
+}
+.socials a {
+    border:0;
+    border-bottom:1px solid #8da58e;
+    padding:0 0 3px;
+    text-transform:none;
+    font:10px var(--mono)
+}
+footer {
+    border-top:1px solid var(--line);
+    padding:20px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    color:#849083;
+    font:9px var(--mono)
+}
+footer a {
+    color:var(--green)
+}
+@media(max-width:760px) {
+    .frame {
+        width:calc(100% - 22px);
+        margin:11px auto
+    }
+    .hero {
+        min-height:580px
+    }
+    .about {
+        grid-template-columns:1fr;
+        gap:24px
+    }
+    .aside {
+        min-height:145px
+    }
+    .project {
+        grid-template-columns:1fr
+    }
+    .art {
+        min-height:260px
+    }
+    .cards,.skillgrid {
+        grid-template-columns:1fr
+    }
+    .contactbox {
+        grid-template-columns:1fr;
+        align-items:start
+    }
+    .contactbox>a {
+        justify-self:start
+    }
+}
+@media(max-width:460px) {
+    .topline {
+        font-size:8px
+    }
+    .hero {
+        min-height:560px
+    }
+    h1 {
+        font-size:clamp(52px,15vw,72px);
+        letter-spacing:-3px
+    }
+    .intro {
+        font-size:13px
+    }
+    .nav-buttons {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        width:100%
+    }
+    .nav-buttons a {
+        min-width:0;
+        padding:12px 6px;
+        font-size:9px
+    }
+    section {
+        padding:62px 0
+    }
+    .facts {
+        grid-template-columns:1fr 1fr
+    }
+    .details {
+        padding:24px
+    }
+    footer {
+        flex-direction:column
+    }
+}
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior:auto
+    }
+    *,*::before,*::after {
+        transition-duration:.01ms!important
+    }
+}
+</style>
+ </head>
+ <body>
+  <div class="frame" id="top">
+   <div class="topline">
+    <span>
+     Personal portfolio &middot; 2026
+    </span>
+    <span>
+     <i class="dot">
+     </i>
+     Learning &amp; building
+    </span>
+   </div>
+   <header class="hero" id="home">
+    <div class="kicker">
+     A LITTLE CORNER OF THE INTERNET
+    </div>
+    <h1>
+     Bilal Yawar
+    </h1>
+    <div class="rule">
+    </div>
+    <p class="hello">
+     Hello, Bilal here.
+    </p>
+    <p class="intro">
+     I'm a
+     <strong>
+      Data Science student at FAST-NUCES
+     </strong>
+     in Karachi, interested in programming, algorithms, and understanding how technology works. I'm at the beginning of my journey, learning by building things, solving problems, and getting a little better with every project.
+    </p>
+    <nav aria-label="Page sections" class="nav-buttons">
+     <a href="#about">
+      About me
+     </a>
+     <a href="#projects">
+      Projects
+     </a>
+     <a href="#skills">
+      Skills
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </nav>
+    <div class="scroll">
+     SCROLL TO EXPLORE &darr;
+    </div>
+   </header>
+   <main>
+    <section id="about">
+     <div class="label">
+      01 / ABOUT ME
+     </div>
+     <div class="about">
+      <div>
+       <h2>
+        Curious by nature.
+        <br/>
+        Learning by doing.
+       </h2>
+       <div class="aside">
+        <b>
+         B.
+        </b>
+        <span>
+         Student &middot; Problem solver &middot; Work in progress
+        </span>
+       </div>
+      </div>
+      <div class="about-copy">
+       <p class="lead">
+        I'm Bilal, a first-year Data Science student at FAST-NUCES Karachi who likes figuring out how things work &mdash; especially when there's code involved.
+       </p>
+       <p>
+        I'm currently strengthening my programming foundations in C and exploring the ideas behind algorithms, data, and software development. I enjoy taking a problem, breaking it into smaller pieces, and working through the logic until it makes sense.
+       </p>
+       <p>
+        I'm still early in the journey, so this portfolio is also a record of what I'm learning and building along the way. I care more about understanding the process than pretending to know everything already.
+       </p>
+       <div class="facts">
+        <div class="fact">
+         <small>
+          BASED IN
+         </small>
+         <strong>
+          Karachi, Pakistan
+         </strong>
+        </div>
+        <div class="fact">
+         <small>
+          STUDYING
+         </small>
+         <strong>
+          BS Data Science
+         </strong>
+        </div>
+        <div class="fact">
+         <small>
+          CURRENT FOCUS
+         </small>
+         <strong>
+          C &amp; algorithms
+         </strong>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="projects">
+     <div class="label">
+      02 / PROJECTS
+     </div>
+     <h2>
+      Things I've been building
+      <span style="color:#6d936f">
+       .
+      </span>
+     </h2>
+     <p class="muted">
+      A look at the work I'm learning through. I'd rather show a real project and explain my part in it than fill this page with things I haven't built.
+     </p>
+     <article class="project">
+      <div class="art">
+       <small>
+        ROUTE NETWORK / EAST KARACHI
+       </small>
+       <svg aria-label="Abstract road network with highlighted route" role="img" viewbox="0 0 540 300">
+        <defs>
+         <pattern height="28" id="grid" patternunits="userSpaceOnUse" width="28">
+          <path d="M28 0H0V28" fill="none" stroke="#78917b" stroke-opacity=".17">
+          </path>
+         </pattern>
+        </defs>
+        <rect fill="url(#grid)" height="300" width="540">
+        </rect>
+        <g fill="none" stroke="#78917b" stroke-linecap="round" stroke-opacity=".55" stroke-width="3">
+         <path d="M25 230L115 175L205 215L300 135L395 165L510 65M45 55L115 175L165 75L300 135L355 35L510 65M115 175L135 280M205 215L245 55L355 35M300 135L350 270L465 245L510 65M25 230L85 280L245 55L395 165L465 245">
+         </path>
+        </g>
+        <path d="M45 55L115 175L205 215L300 135L395 165L510 65" fill="none" stroke="#a9d3a1" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+        </path>
+        <g fill="#183729" stroke="#c4dfb9" stroke-width="3">
+         <circle cx="45" cy="55" r="8">
+         </circle>
+         <circle cx="115" cy="175" r="7">
+         </circle>
+         <circle cx="205" cy="215" r="7">
+         </circle>
+         <circle cx="300" cy="135" r="7">
+         </circle>
+         <circle cx="395" cy="165" r="7">
+         </circle>
+         <circle cx="510" cy="65" r="8">
+         </circle>
+        </g>
+        <g fill="#dce6d8" font-family="monospace" font-size="10">
+         <text x="25" y="35">
+          START
+         </text>
+         <text x="450" y="45">
+          DESTINATION
+         </text>
+        </g>
+       </svg>
+       <small>
+        SHORTEST PATH &middot; ROUTE VISUALIZATION
+       </small>
+      </div>
+      <div class="details">
+       <span class="status">
+        IN DEVELOPMENT
+       </span>
+       <h3>
+        Smart Route Finder for East Karachi
+       </h3>
+       <p>
+        A C and raylib desktop project that aims to compare routes across East Karachi using estimated travel times. The idea is to find a quicker route based on road conditions and travel-time estimates, rather than simply choosing the shortest distance.
+       </p>
+       <div class="contrib">
+        <small>
+         MY CONTRIBUTION
+        </small>
+        <strong>
+         Implemented Dijkstra's shortest-path algorithm
+        </strong>
+       </div>
+       <div class="tags">
+        <span>
+         C
+        </span>
+        <span>
+         raylib
+        </span>
+        <span>
+         Dijkstra
+        </span>
+        <span>
+         Algorithms
+        </span>
+       </div>
+       <div class="meta">
+        UNIVERSITY PROJECT &middot; CURRENTLY IN PROGRESS
+       </div>
+      </div>
+     </article>
+    </section>
+    <section id="activities">
+     <div class="label">
+      03 / ACHIEVEMENTS &amp; ACTIVITIES
+     </div>
+     <h2>
+      Beyond the classroom
+      <span style="color:#6d936f">
+       .
+      </span>
+     </h2>
+     <p class="muted">
+      Things I've taken part in and areas I'm exploring alongside my coursework.
+     </p>
+     <div class="cards">
+      <article class="card">
+       <span class="num">
+        01 / EVENT
+       </span>
+       <h3>
+        Coders Cup
+       </h3>
+       <p>
+        Participation in Coders Cup 2026.
+       </p>
+       <span class="year">
+        2026
+       </span>
+      </article>
+      <article class="card">
+       <span class="num">
+        02 / ACTIVITY
+       </span>
+       <h3>
+        Dark Protocol
+       </h3>
+       <p>
+        Dark Protocol &mdash; an activity to include as part of my university and technology journey.
+       </p>
+       <span class="year">
+        ACTIVITY
+       </span>
+      </article>
+      <article class="card">
+       <span class="num">
+        03 / INTEREST
+       </span>
+       <h3>
+        Competitive Programming
+       </h3>
+       <p>
+        Interested in developing problem-solving skills through programming challenges and algorithmic thinking.
+       </p>
+       <span class="year">
+        ONGOING INTEREST
+       </span>
+      </article>
+     </div>
+    </section>
+    <section id="skills">
+     <div class="label">
+      04 / SKILLS
+     </div>
+     <h2>
+      My toolkit
+      <span style="color:#6d936f">
+       .
+      </span>
+     </h2>
+     <p class="muted">
+      A snapshot of the tools and concepts I'm working with. Still learning, still adding to the toolkit.
+     </p>
+     <div class="skillgrid">
+      <div class="skill">
+       <h3>
+        Programming
+       </h3>
+       <div class="tags">
+        <span>
+         C
+        </span>
+       </div>
+       <div class="level">
+        Currently learning
+       </div>
+      </div>
+      <div class="skill">
+       <h3>
+        Data &amp; databases
+       </h3>
+       <div class="tags">
+        <span>
+         SQL
+        </span>
+        <span>
+         Basic data analysis
+        </span>
+        <span>
+         MS Access
+        </span>
+       </div>
+       <div class="level">
+        Beginner
+       </div>
+      </div>
+      <div class="skill">
+       <h3>
+        Productivity
+       </h3>
+       <div class="tags">
+        <span>
+         Excel
+        </span>
+        <span>
+         PowerPoint
+        </span>
+        <span>
+         Word
+        </span>
+       </div>
+       <div class="level">
+        Comfortable
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="contact">
+     <div class="label">
+      05 / CONTACT
+     </div>
+     <div class="contactbox">
+      <div>
+       <h2>
+        Have something
+        <br/>
+        in mind?
+       </h2>
+       <p>
+        I'm always up for connecting with people who enjoy technology, learning, and building interesting things. Feel free to reach out.
+       </p>
+       <div class="socials">
+        <a href="mailto:bilalyawar85@gmail.com">
+         Email me &nearrow;
+        </a>
+        <a href="https://github.com/bilalyawar85-work?tab=repositories">
+         GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/bilal-yawar-520837322/">
+         LinkedIn
+        </a>
+       </div>
+      </div>
+      <a href="mailto:bilalyawar85@gmail.com">
+       Get in touch &nearrow;
+      </a>
+     </div>
+    </section>
+   </main>
+   <footer>
+    <span>
+     &copy; 2026 BILAL YAWAR
+    </span>
+    <span>
+     MADE WITH CURIOSITY
+    </span>
+    <a href="#top">
+     BACK TO TOP &uarr;
+    </a>
+   </footer>
+  </div>
+ </body>
+</html>
